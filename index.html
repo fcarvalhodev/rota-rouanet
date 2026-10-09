@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rota Rouanet</title>
+<meta name="description" content="A Lei Rouanet explicada de um jeito simples: como funciona, o limite de cachê de cada governo, a diferença entre Rouanet e os shows pagos por prefeituras, quanto ela movimenta e o que é mentira.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: the Rotas skeleton in the easy-reading format. The Rouanet route colour is stage red. Order: question, short answer, how the law works, the fee cap by government, Rouanet vs city-hall shows, how much it moves, true or false, summary, all the numbers. */
+:root{
+  --bg:#f1f0f4; --paper:#fbfbfd; --ink:#1b1a22; --muted:#5d5a68; --line:#d6d3de; --soft:#e7e5ec;
+  --accent:#a3283c; --accent-soft:#f6dfe3;
+  --own:#1baf7a; --usd:#eb6834; --usd-soft:#fbe5dc; --gray:#8a8c92;
+  --ok:#1f6b45; --ok-soft:#dcefe3; --no:#a12a2a; --no-soft:#f6dede; --part:#7a5a00; --part-soft:#f6ebc9;
+  --display:"Archivo","Arial Narrow",Impact,sans-serif;
+  --ui:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121117; --paper:#1a1920; --ink:#ebe9f0; --muted:#a6a2b2; --line:#2e2c37; --soft:#24222c;
+  --accent:#f08f9c; --accent-soft:#3a1a20;
+  --own:#199e70; --usd:#d95926; --usd-soft:#3a2016; --gray:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121117; --paper:#1a1920; --ink:#ebe9f0; --muted:#a6a2b2; --line:#2e2c37; --soft:#24222c;
+  --accent:#f08f9c; --accent-soft:#3a1a20;
+  --own:#199e70; --usd:#d95926; --usd-soft:#3a2016; --gray:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:19px;line-height:1.7}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px}
+.kicker,.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kicker{color:var(--accent)}
+h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(46px,11vw,104px);line-height:.9;margin:0;text-transform:uppercase;overflow-wrap:anywhere}
+h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;margin:0;text-transform:uppercase;text-wrap:balance}
+h3{font-family:var(--ui);font-weight:700;font-size:22px;line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+header,section{display:grid;grid-template-columns:minmax(0,1fr)}
+header{padding-block:40px 8px;gap:18px}
+section{padding-block:48px 8px;gap:18px}
+.lg{font-size:21px;line-height:1.6}
+.sub{color:var(--muted);max-width:62ch}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:2px 14px;line-height:1.5}
+.src a{color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;gap:12px;align-content:start}
+.answer-box{background:var(--accent-soft);border:2px solid var(--accent);border-radius:6px;padding:20px;margin-top:40px}
+.note{font-size:16px;color:var(--muted)}
+
+
+:root{--g-pt:#2a78d6; --g-bolso:#1baf7a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g-pt:#3987e5; --g-bolso:#199e70}}
+:root[data-theme="dark"]{--g-pt:#3987e5; --g-bolso:#199e70}
+.steps{display:grid;gap:10px;counter-reset:s}
+.steps div{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px}
+.steps .emo{font-size:40px;line-height:1;text-align:center}
+.steps p{font-size:18px}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vs .card{border-top:6px solid var(--c)}
+.vs .card .emo{font-size:44px;line-height:1}
+.vs .card h3{font-size:22px}
+.vs .card ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:17px;line-height:1.5}
+.tl{display:grid;gap:10px}
+.tr{display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
+.tr .lab{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-family:var(--ui);font-weight:700;font-size:17px}
+.tr .lab span{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--muted)}
+.tr .t{height:30px;background:var(--soft);border-radius:3px;position:relative}
+.tr .f{position:absolute;inset:0 auto 0 0;background:var(--c);border-radius:3px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:var(--paper);font-family:var(--mono);font-weight:600;font-size:14px;white-space:nowrap}
+.tr .v{position:absolute;top:0;bottom:0;display:flex;align-items:center;font-family:var(--mono);font-weight:600;font-size:14px;color:var(--ink);white-space:nowrap}
+.era{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.three .card .n{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:52px;line-height:.9;color:var(--accent)}
+.three .card p{font-size:17px}
+/* true or false */
+.vf{display:grid;gap:12px}
+.vfi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:grid;gap:8px}
+.vfi p{font-size:18px}
+.badge{justify-self:start;font-family:var(--ui);font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.badge.f{background:var(--no-soft);color:var(--no);border:2px solid var(--no)}
+.badge.m{background:var(--part-soft);color:var(--part);border:2px solid var(--part)}
+.badge.v{background:var(--ok-soft);color:var(--ok);border:2px solid var(--ok)}
+
+.verdict{background:var(--ink);color:var(--paper);border-radius:6px;padding:22px 20px;display:grid;gap:12px}
+.verdict h2{color:var(--paper)}
+.verdict ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:20px}
+details.mais{margin-top:44px;border:2px solid var(--line);border-radius:6px;background:var(--paper)}
+details.mais>summary{cursor:pointer;padding:18px 20px;font-family:var(--ui);font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.mais>summary::after{content:"+";font-family:var(--mono);font-size:24px;line-height:1}
+details.mais[open]>summary::after{content:"−"}
+details.mais>summary::-webkit-details-marker{display:none}
+.mais-body{padding:0 20px 20px;font-size:17px;line-height:1.6;display:grid;gap:14px}
+.mais-body table{width:100%;border-collapse:collapse;font-size:15px}
+.mais-body th,.mais-body td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+.mais-body th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.mais-body td:last-child{font-family:var(--mono);white-space:nowrap}
+footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;gap:8px}
+@media (max-width:640px){.coins3{grid-template-columns:minmax(0,1fr)}.coins{max-width:220px}}
+@media (max-width:520px){.flow{grid-template-columns:minmax(0,1fr)}.arrows{grid-auto-flow:column;justify-content:center}.pib{grid-template-columns:repeat(10,minmax(0,1fr))}}
+
+@media (max-width:640px){.vs{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head><body>
+
+
+<style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/">Tesouro</a><a href="https://fcarvalhodev.github.io/rota-rouanet/" aria-current="page">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/">Ventos</a></div></nav>
+<header class="wrap">
+  <div class="kicker">Rota Rouanet</div>
+  <h1>Artista fica rico com a Rouanet?</h1>
+  <p class="lede lg">Muita gente acha que a Lei Rouanet paga cachês milionários para artistas famosos. Aqui está como ela funciona, quanto um artista pode receber por ela e de onde vêm os cachês milionários de verdade.</p>
+</header>
+
+<main class="wrap">
+
+<section class="answer-box" aria-labelledby="h-curta">
+  <h2 id="h-curta">A resposta curta</h2>
+  <p class="lg">Pela Rouanet, não. A lei tem <b>limite de cachê</b>: hoje é de até R$ 25 mil por apresentação para um artista solo. Bolsonaro tinha baixado para R$ 3 mil, e Lula subiu de novo. Os cachês de <b>R$ 1 milhão</b> que viraram escândalo em 2022 foram pagos direto por <b>prefeituras</b>, sem passar pela Rouanet.</p>
+</section>
+
+<section aria-labelledby="h-como">
+  <h2 id="h-como">Como a Rouanet funciona</h2>
+  <p class="sub lg">O governo não manda dinheiro para o artista. Ele deixa empresas usarem parte do imposto para patrocinar cultura.</p>
+  <div class="steps">
+    <div><span class="emo" aria-hidden="true">📝</span><p>O produtor manda o projeto para o <b>Ministério da Cultura</b>, que analisa.</p></div>
+    <div><span class="emo" aria-hidden="true">✅</span><p>Se aprovar, o projeto ganha uma <b>autorização para procurar patrocínio</b>. Ainda não tem dinheiro nenhum.</p></div>
+    <div><span class="emo" aria-hidden="true">🏢</span><p>Uma empresa patrocina e <b>desconta do Imposto de Renda</b>, até 4% do imposto que deve.</p></div>
+    <div><span class="emo" aria-hidden="true">🧾</span><p>O projeto acontece e o produtor tem de <b>prestar contas</b> do que gastou.</p></div>
+  </div>
+  <p class="lg">Por isso “aprovado” não é “gasto”. Em 2023, foram aprovados cerca de R$ 16 bilhões em projetos, mas as empresas só patrocinaram R$ 2,3 bilhões.</p>
+  <span class="src"><a href="https://istoedinheiro.com.br/lei-rouanet-recorde-2025-projetos-captaram" target="_blank" rel="noopener">IstoÉ Dinheiro: como funciona</a><a href="https://diariodonordeste.verdesmares.com.br/projeto-comprova/ha-diferenca-entre-os-valores-que-sao-aprovados-e-os-que-sao-captados-por-projetos-via-lei-rouanet-1.3557248" target="_blank" rel="noopener">Comprova, via Diário do Nordeste: aprovado e captado</a></span>
+</section>
+
+<section aria-labelledby="h-cache">
+  <h2 id="h-cache">O limite do cachê</h2>
+  <p class="sub lg">Quanto um artista solo pode receber por apresentação num projeto da Rouanet:</p>
+  <div class="card tl" id="cache"></div>
+  <p class="lg">Em fevereiro de 2022, o governo Bolsonaro cortou o limite em 93%. Em abril de 2023, o governo Lula subiu para R$ 25 mil, ainda abaixo dos R$ 45 mil de antes. Valores maiores só com aprovação de uma comissão.</p>
+  <span class="src"><a href="https://exame.com/brasil/governo-bolsonaro-oficializa-serie-de-mudancas-na-lei-rouanet-entenda" target="_blank" rel="noopener">Exame: regras de 2022</a><a href="https://agorarn.com.br/ultimas/governo-lula-aumenta-limite-de-caches-de-artistas-na-rouanet-de-r-3-mil-para-r-25-mil/" target="_blank" rel="noopener">Agora RN: regras de 2023</a></span>
+</section>
+
+<section aria-labelledby="h-pref">
+  <h2 id="h-pref">Rouanet não é show de prefeitura</h2>
+  <p class="sub lg">Em 2022, o cantor Zé Neto criticou artistas que usam a Rouanet. Aí apareceram cachês milionários de shows sertanejos, e o Ministério Público foi investigar. Esse caso ficou conhecido como “CPI do Sertanejo”. Mas o dinheiro era outro:</p>
+  <div class="vs">
+    <div class="card" style="--c:var(--accent)"><span class="emo" aria-hidden="true">🎭</span><h3>Lei Rouanet</h3><ul><li>Dinheiro de empresas, que descontam do imposto.</li><li>Cachê com limite: hoje R$ 25 mil.</li><li>Projeto analisado pelo Ministério da Cultura.</li></ul></div>
+    <div class="card" style="--c:var(--usd)"><span class="emo" aria-hidden="true">🏛️</span><h3>Show de prefeitura</h3><ul><li>Dinheiro do caixa da cidade.</li><li>Não tem o limite de cachê da Rouanet.</li><li>Artista famoso pode ser contratado sem licitação.</li></ul></div>
+  </div>
+  <p class="sub lg">Comparando o limite da Rouanet com cachês pagos por prefeituras em 2022:</p>
+  <div class="card tl" id="shows"></div>
+  <p class="lg">O Ministério Público abriu investigação em <b>pelo menos 36 cidades</b>. Em Teolândia, na Bahia, o cachê de um único show passou de 40% do que a cidade tinha gastado com saúde no ano anterior. O problema continua: em 2025, as prefeituras de Minas Gerais gastaram cerca de R$ 538 milhões com shows, e o Tribunal de Contas do estado passou a fiscalizar mais.</p>
+  <span class="src"><a href="https://diariodonordeste.verdesmares.com.br/entretenimento/e-hit/shows-de-sertanejo-sao-investigados-em-mais-de-35-cidades-pelo-mp-gusttavo-lima-lidera-lista-1.3242859" target="_blank" rel="noopener">UOL, via Diário do Nordeste: CPI do Sertanejo</a><a href="https://ofator.com.br/informacao/tce-de-minas-prepara-norma-e-aperta-fiscalizacao-sobre-caches-de-shows-pagos-por-prefeituras/" target="_blank" rel="noopener">O Fator: prefeituras de Minas em 2025</a></span>
+</section>
+
+<section aria-labelledby="h-quanto">
+  <h2 id="h-quanto">Quanto a Rouanet movimenta</h2>
+  <p class="sub lg">Quanto as empresas patrocinaram pela lei em cada ano:</p>
+  <div class="card tl" id="capt"></div>
+  <div class="three">
+    <div class="card"><span class="n">R$ 7,59</span><h3>de volta para cada R$ 1</h3><p>em movimento na economia, segundo um estudo da FGV pedido pelo Ministério da Cultura.</p></div>
+    <div class="card"><span class="n">228 mil</span><h3>empregos</h3><p>mantidos ou criados pelos projetos de 2024, diz o mesmo estudo.</p></div>
+    <div class="card" style="--c:var(--usd)"><span class="n" style="color:var(--usd)">86 de 100</span><h3>projetos no Sul e Sudeste</h3><p>Em 2024 o dinheiro ainda ficava concentrado. Pela primeira vez há projetos em todos os 27 estados.</p></div>
+  </div>
+  <p class="lg">Também já houve fraude. Em 2016, a Polícia Federal descobriu que um grupo desviou cerca de <b>R$ 21 milhões</b> da Rouanet, e até um casamento foi pago com o dinheiro.</p>
+  <span class="src"><a href="https://istoedinheiro.com.br/lei-rouanet-recorde-2025-projetos-captaram" target="_blank" rel="noopener">IstoÉ Dinheiro: 2022, 2024 e 2025</a><a href="https://diariodonordeste.verdesmares.com.br/projeto-comprova/ha-diferenca-entre-os-valores-que-sao-aprovados-e-os-que-sao-captados-por-projetos-via-lei-rouanet-1.3557248" target="_blank" rel="noopener">Comprova: 2023</a><a href="https://www.brasildefato.com.br/2026/01/13/lei-rouanet-gera-empregos-e-impacto-bilionario-mas-sul-e-sudeste-ainda-concentram-86-dos-projetos/" target="_blank" rel="noopener">FGV, via Brasil de Fato</a><a href="https://exame.com/brasil/mpf-denuncia-31-pessoas-acusadas-de-fraudes-usando-a-lei-rouanet/" target="_blank" rel="noopener">Exame: Operação Boca Livre</a></span>
+</section>
+
+<section aria-labelledby="h-vf">
+  <h2 id="h-vf">É verdade?</h2>
+  <div class="vf">
+    <div class="vfi"><span class="badge f">Falso</span><p><b>“Artista famoso ganha milhões pela Rouanet.”</b> O cachê pela lei tem limite, hoje de R$ 25 mil por apresentação para artista solo.</p></div>
+    <div class="vfi"><span class="badge v">Verdade</span><p><b>“Bolsonaro baixou o cachê da Rouanet para R$ 3 mil.”</b> Foi em fevereiro de 2022. Antes eram R$ 45 mil.</p></div>
+    <div class="vfi"><span class="badge v">Verdade</span><p><b>“Lula aumentou o cachê da Rouanet.”</b> Subiu para R$ 25 mil em abril de 2023. Ainda é menos do que antes de 2022.</p></div>
+    <div class="vfi"><span class="badge f">Falso</span><p><b>“Os shows milionários de sertanejo eram pagos pela Rouanet.”</b> Eram pagos por prefeituras, com dinheiro da própria cidade.</p></div>
+    <div class="vfi"><span class="badge f">Falso</span><p><b>“Lula gastou R$ 16 bilhões com a Rouanet em 2023.”</b> Esse é o valor aprovado. As empresas patrocinaram R$ 2,3 bilhões.</p></div>
+    <div class="vfi"><span class="badge m">Meia verdade</span><p><b>“A Rouanet é dinheiro público.”</b> Não sai direto do orçamento: é imposto que o governo deixa de cobrar das empresas. Mas é dinheiro que deixa de entrar nos cofres.</p></div>
+    <div class="vfi"><span class="badge m">Meia verdade</span><p><b>“A Rouanet só ajuda o Sudeste.”</b> Em 2024, 86 de cada 100 projetos eram do Sul e Sudeste. Mas hoje há projetos em todos os estados.</p></div>
+    <div class="vfi"><span class="badge f">Falso</span><p><b>“Nunca teve roubo na Rouanet.”</b> A Operação Boca Livre, de 2016, achou um desvio de cerca de R$ 21 milhões.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-resumo">
+  <div class="verdict">
+    <h2 id="h-resumo">Resumindo</h2>
+    <ul>
+      <li>A Rouanet deixa empresas patrocinarem cultura com <b>parte do imposto</b>.</li>
+      <li>O cachê tem <b>limite</b>: R$ 45 mil antes de 2022, R$ 3 mil com Bolsonaro e R$ 25 mil com Lula.</li>
+      <li>Os cachês de <b>R$ 1 milhão</b> vinham de <b>prefeituras</b>, não da Rouanet.</li>
+      <li>A lei movimenta a economia, mas o dinheiro ainda fica concentrado no Sul e Sudeste.</li>
+    </ul>
+  </div>
+</section>
+
+<details class="mais">
+  <summary>Quer ver todos os números? Toque aqui</summary>
+  <div class="mais-body">
+    <h3>Limites de cachê por apresentação</h3>
+    <table>
+      <tr><th>Quem</th><th>Antes de 2022</th><th>2022 (Bolsonaro)</th><th>2023 (Lula)</th></tr>
+      <tr><td>Artista solo</td><td>R$ 45 mil</td><td>R$ 3 mil</td><td>R$ 25 mil</td></tr>
+      <tr><td>Músico</td><td>–</td><td>R$ 3,5 mil</td><td>R$ 5 mil</td></tr>
+      <tr><td>Maestro</td><td>–</td><td>R$ 15 mil</td><td>R$ 25 mil</td></tr>
+      <tr><td>Grupo ou banda</td><td>–</td><td>–</td><td>R$ 50 mil</td></tr>
+    </table>
+    <span class="src"><a href="https://exame.com/brasil/governo-bolsonaro-oficializa-serie-de-mudancas-na-lei-rouanet-entenda" target="_blank" rel="noopener">Exame</a><a href="https://agorarn.com.br/ultimas/governo-lula-aumenta-limite-de-caches-de-artistas-na-rouanet-de-r-3-mil-para-r-25-mil/" target="_blank" rel="noopener">Agora RN</a></span>
+    <h3>Outras mudanças</h3>
+    <p>Em 2022, o teto de um projeto comum caiu de R$ 1 milhão para R$ 500 mil, o aluguel de teatro ficou limitado a R$ 10 mil e o prazo para buscar patrocínio caiu de 36 para 24 meses. O secretário Mario Frias disse que a ideia era deixar a lei “mais justa e popular”. Em 2023, o teto passou a variar de R$ 1 milhão a R$ 10 milhões, voltaram os planos de quatro anos e a comissão de cultura (Cnic) voltou a funcionar.</p>
+    <span class="src"><a href="https://exame.com/brasil/governo-bolsonaro-oficializa-serie-de-mudancas-na-lei-rouanet-entenda" target="_blank" rel="noopener">Exame</a><a href="https://agorarn.com.br/ultimas/governo-lula-aumenta-limite-de-caches-de-artistas-na-rouanet-de-r-3-mil-para-r-25-mil/" target="_blank" rel="noopener">Agora RN</a></span>
+    <h3>Cachês investigados em 2022</h3>
+    <table>
+      <tr><th>Cidade</th><th>Cachê</th></tr>
+      <tr><td>Conceição do Mato Dentro (MG)</td><td>R$ 1,2 mi</td></tr>
+      <tr><td>Magé (RJ)</td><td>R$ 1 mi</td></tr>
+      <tr><td>São Luiz (RR), cerca de R$ 97 por morador</td><td>R$ 800 mil</td></tr>
+      <tr><td>Teolândia (BA), festa de mais de R$ 2 mi</td><td>R$ 704 mil</td></tr>
+    </table>
+    <p>Gusttavo Lima, o mais citado, disse: “Eu nunca me beneficiei de dinheiro público ou empréstimo.” Uma lei de 1993 permite contratar sem licitação artistas consagrados pela crítica ou pelo público.</p>
+    <span class="src"><a href="https://diariodonordeste.verdesmares.com.br/entretenimento/e-hit/shows-de-sertanejo-sao-investigados-em-mais-de-35-cidades-pelo-mp-gusttavo-lima-lidera-lista-1.3242859" target="_blank" rel="noopener">Diário do Nordeste</a></span>
+    <h3>Estudo da FGV (2026)</h3>
+    <p>Em 2024 os projetos movimentaram R$ 25,7 bilhões na economia. O governo deixou de cobrar pouco mais de R$ 3 bilhões e arrecadou R$ 3,9 bilhões em impostos da cadeia da cultura. 85,5% dos pagamentos foram para micro e pequenas empresas. O estudo foi encomendado pelo Ministério da Cultura.</p>
+    <span class="src"><a href="https://www.brasildefato.com.br/2026/01/13/lei-rouanet-gera-empregos-e-impacto-bilionario-mas-sul-e-sudeste-ainda-concentram-86-dos-projetos/" target="_blank" rel="noopener">Brasil de Fato</a></span>
+  </div>
+</details>
+
+<footer>
+  <p>Cada item traz o link da checagem, do órgão público ou da reportagem de onde saiu.</p>
+  <p>Atualizado em 9 de outubro de 2026.</p>
+</footer>
+</main>
+
+<script>
+(function(){
+const bars=(id,rows,max)=>{document.getElementById(id).innerHTML=rows.map(r=>{if(r[0]==='era')return `<div class="era">${r[1]}</div>`;const w=Math.max(r[2]/max*100,.6);return `<div class="tr"><div class="lab">${r[0]}<span>${r[1]}</span></div><div class="t">${w<26?`<span class="f" style="--c:${r[3]};width:${w}%"></span><span class="v" style="left:calc(${w}% + 8px)">${r[4]}</span>`:`<span class="f" style="--c:${r[3]};width:${w}%">${r[4]}</span>`}</div></div>`}).join('');};
+bars('cache',[
+ ["Antes de 2022","regra antiga",45,"var(--muted)","R$ 45 mil"],
+ ["Fevereiro de 2022","governo Bolsonaro",3,"var(--g-bolso)","R$ 3 mil"],
+ ["Abril de 2023","governo Lula",25,"var(--g-pt)","R$ 25 mil"]
+],45);
+bars('shows',[
+ ["Limite da Rouanet hoje","artista solo",25,"var(--accent)","R$ 25 mil"],
+ ["Conceição do Mato Dentro (MG)","Gusttavo Lima",1200,"var(--usd)","R$ 1,2 milhão"],
+ ["Magé (RJ)","Gusttavo Lima",1000,"var(--usd)","R$ 1 milhão"],
+ ["São Luiz (RR)","Gusttavo Lima",800,"var(--usd)","R$ 800 mil"],
+ ["Teolândia (BA)","Gusttavo Lima",704,"var(--usd)","R$ 704 mil"]
+],1200);
+bars('capt',[
+ ["2022","governo Bolsonaro",2.1,"var(--g-bolso)","R$ 2,1 bi"],
+ ["2023","governo Lula",2.3,"var(--g-pt)","R$ 2,3 bi"],
+ ["2024","governo Lula",3.0,"var(--g-pt)","R$ 3 bi"],
+ ["2025","governo Lula",3.41,"var(--g-pt)","R$ 3,4 bi"]
+],3.41);
+})();
+</script>
+
+</body></html>
