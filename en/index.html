@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rouanet Route</title>
+<meta name="description" content="The Rouanet Law explained simply: how it works, the cap on artist fees under each government, the difference between Rouanet and concerts paid for by city halls, how much it moves and what is a lie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: the Rotas skeleton in the easy-reading format. The Rouanet route colour is stage red. Order: question, short answer, how the law works, the fee cap by government, Rouanet vs city-hall shows, how much it moves, true or false, summary, all the numbers. */
+:root{
+  --bg:#f1f0f4; --paper:#fbfbfd; --ink:#1b1a22; --muted:#5d5a68; --line:#d6d3de; --soft:#e7e5ec;
+  --accent:#a3283c; --accent-soft:#f6dfe3;
+  --own:#1baf7a; --usd:#eb6834; --usd-soft:#fbe5dc; --gray:#8a8c92;
+  --ok:#1f6b45; --ok-soft:#dcefe3; --no:#a12a2a; --no-soft:#f6dede; --part:#7a5a00; --part-soft:#f6ebc9;
+  --display:"Archivo","Arial Narrow",Impact,sans-serif;
+  --ui:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121117; --paper:#1a1920; --ink:#ebe9f0; --muted:#a6a2b2; --line:#2e2c37; --soft:#24222c;
+  --accent:#f08f9c; --accent-soft:#3a1a20;
+  --own:#199e70; --usd:#d95926; --usd-soft:#3a2016; --gray:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121117; --paper:#1a1920; --ink:#ebe9f0; --muted:#a6a2b2; --line:#2e2c37; --soft:#24222c;
+  --accent:#f08f9c; --accent-soft:#3a1a20;
+  --own:#199e70; --usd:#d95926; --usd-soft:#3a2016; --gray:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:19px;line-height:1.7}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px}
+.kicker,.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kicker{color:var(--accent)}
+h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(46px,11vw,104px);line-height:.9;margin:0;text-transform:uppercase;overflow-wrap:anywhere}
+h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;margin:0;text-transform:uppercase;text-wrap:balance}
+h3{font-family:var(--ui);font-weight:700;font-size:22px;line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+header,section{display:grid;grid-template-columns:minmax(0,1fr)}
+header{padding-block:40px 8px;gap:18px}
+section{padding-block:48px 8px;gap:18px}
+.lg{font-size:21px;line-height:1.6}
+.sub{color:var(--muted);max-width:62ch}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:2px 14px;line-height:1.5}
+.src a{color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;gap:12px;align-content:start}
+.answer-box{background:var(--accent-soft);border:2px solid var(--accent);border-radius:6px;padding:20px;margin-top:40px}
+.note{font-size:16px;color:var(--muted)}
+
+
+:root{--g-pt:#2a78d6; --g-bolso:#1baf7a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g-pt:#3987e5; --g-bolso:#199e70}}
+:root[data-theme="dark"]{--g-pt:#3987e5; --g-bolso:#199e70}
+.steps{display:grid;gap:10px;counter-reset:s}
+.steps div{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px}
+.steps .emo{font-size:40px;line-height:1;text-align:center}
+.steps p{font-size:18px}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vs .card{border-top:6px solid var(--c)}
+.vs .card .emo{font-size:44px;line-height:1}
+.vs .card h3{font-size:22px}
+.vs .card ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:17px;line-height:1.5}
+.tl{display:grid;gap:10px}
+.tr{display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
+.tr .lab{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-family:var(--ui);font-weight:700;font-size:17px}
+.tr .lab span{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--muted)}
+.tr .t{height:30px;background:var(--soft);border-radius:3px;position:relative}
+.tr .f{position:absolute;inset:0 auto 0 0;background:var(--c);border-radius:3px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:var(--paper);font-family:var(--mono);font-weight:600;font-size:14px;white-space:nowrap}
+.tr .v{position:absolute;top:0;bottom:0;display:flex;align-items:center;font-family:var(--mono);font-weight:600;font-size:14px;color:var(--ink);white-space:nowrap}
+.era{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.three .card .n{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:52px;line-height:.9;color:var(--accent)}
+.three .card p{font-size:17px}
+/* true or false */
+.vf{display:grid;gap:12px}
+.vfi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:grid;gap:8px}
+.vfi p{font-size:18px}
+.badge{justify-self:start;font-family:var(--ui);font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.badge.f{background:var(--no-soft);color:var(--no);border:2px solid var(--no)}
+.badge.m{background:var(--part-soft);color:var(--part);border:2px solid var(--part)}
+.badge.v{background:var(--ok-soft);color:var(--ok);border:2px solid var(--ok)}
+
+.verdict{background:var(--ink);color:var(--paper);border-radius:6px;padding:22px 20px;display:grid;gap:12px}
+.verdict h2{color:var(--paper)}
+.verdict ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:20px}
+details.mais{margin-top:44px;border:2px solid var(--line);border-radius:6px;background:var(--paper)}
+details.mais>summary{cursor:pointer;padding:18px 20px;font-family:var(--ui);font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.mais>summary::after{content:"+";font-family:var(--mono);font-size:24px;line-height:1}
+details.mais[open]>summary::after{content:"−"}
+details.mais>summary::-webkit-details-marker{display:none}
+.mais-body{padding:0 20px 20px;font-size:17px;line-height:1.6;display:grid;gap:14px}
+.mais-body table{width:100%;border-collapse:collapse;font-size:15px}
+.mais-body th,.mais-body td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+.mais-body th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.mais-body td:last-child{font-family:var(--mono);white-space:nowrap}
+footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;gap:8px}
+@media (max-width:640px){.coins3{grid-template-columns:minmax(0,1fr)}.coins{max-width:220px}}
+@media (max-width:520px){.flow{grid-template-columns:minmax(0,1fr)}.arrows{grid-auto-flow:column;justify-content:center}.pib{grid-template-columns:repeat(10,minmax(0,1fr))}}
+
+@media (max-width:640px){.vs{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head><body>
+
+
+<style>/* barra comum das Rotas */.rotas-bar .rb-lang{margin-left:auto;color:var(--accent);font-weight:600}.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato fácil */body{font-size:19px;line-height:1.7}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(46px,11vw,104px);line-height:.9;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Routes"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/en/">Routes</a><a href="https://fcarvalhodev.github.io/rota-washington/en/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/en/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/en/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/en/">Faith</a><a href="https://fcarvalhodev.github.io/rota-esplanada/en/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/en/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/en/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/en/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/en/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/en/">Treasury</a><a href="https://fcarvalhodev.github.io/rota-rouanet/en/" aria-current="page">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/en/">Winds</a><a href="https://fcarvalhodev.github.io/rota-do-algoritmo/en/">Algorithm</a><a class="rb-lang" href="../" hreflang="pt-BR" lang="pt-BR">PT</a></div></nav>
+<header class="wrap">
+  <div class="kicker">Rouanet Route</div>
+  <h1>Do artists get rich from the Rouanet Law?</h1>
+  <p class="lede lg">Many people think the Rouanet Law, Brazil's main cultural tax-incentive law, pays million-real fees to famous artists. Here is how it works, how much an artist can receive through it and where the real million-real fees come from.</p>
+  <a class="rv-btn" href="visual.html"><span aria-hidden="true">📊</span> See the summary in icons</a>
+</header>
+
+<main class="wrap">
+
+<section class="answer-box" aria-labelledby="h-curta">
+  <h2 id="h-curta">The short answer</h2>
+  <p class="lg">A project's value is not an artist's personal fee. Ministry of Culture Normative Instruction 29/2026 sets <b>R$25,000 per performance</b> for an individual fee, with exceptions. That cap does not set the total a person can receive across several events. Any claim about millions requires identifying projects and payments. The municipal concerts investigated in 2022 used a different kind of contract.</p>
+</section>
+
+<section aria-labelledby="h-como">
+  <h2 id="h-como">How Rouanet works</h2>
+  <p class="sub lg">Under the tax-incentive mechanism, companies and individuals can direct part of their income tax to culture. The government gives up revenue; permission to raise funds is not a payment to the artist.</p>
+  <div class="steps">
+    <div><span class="emo" aria-hidden="true">📝</span><p>The producer sends the project to the <b>Ministry of Culture</b>, which reviews it.</p></div>
+    <div><span class="emo" aria-hidden="true">✅</span><p>If approved, the project gets <b>permission to look for sponsorship</b>. It still has no money at all.</p></div>
+    <div><span class="emo" aria-hidden="true">🏢</span><p>Companies taxed on actual profit and individuals can sponsor it, deducting from their income tax under the legal conditions and limits.</p></div>
+    <div><span class="emo" aria-hidden="true">🧾</span><p>The project takes place and the producer has to <b>account for</b> what was spent.</p></div>
+  </div>
+  <p class="lg">That is why “approved” is not “spent”. In 2023, about R$16 billion in projects were approved, but only R$2.3 billion was raised.</p>
+  <span class="src"><a href="https://istoedinheiro.com.br/lei-rouanet-recorde-2025-projetos-captaram" target="_blank" rel="noopener">IstoÉ Dinheiro: how it works</a><a href="https://diariodonordeste.verdesmares.com.br/projeto-comprova/ha-diferenca-entre-os-valores-que-sao-aprovados-e-os-que-sao-captados-por-projetos-via-lei-rouanet-1.3557248" target="_blank" rel="noopener">Comprova, via Diário do Nordeste: approved and raised</a></span>
+</section>
+
+<section aria-labelledby="h-cache">
+  <h2 id="h-cache">The fee cap</h2>
+  <p class="sub lg">How much a solo artist can receive per performance in a Rouanet project:</p>
+  <div class="card tl" id="cache"></div>
+  <p class="lg">In February 2022, the Bolsonaro government cut the cap by 93%. In April 2023, the Lula government raised it to R$25,000, still below the R$45,000 of before. The current rule allows additional amounts from non-incentivized funds or a justified request to the CNIC. The cap is per performance, not per year.</p>
+  <span class="src"><a href="https://exame.com/brasil/governo-bolsonaro-oficializa-serie-de-mudancas-na-lei-rouanet-entenda" target="_blank" rel="noopener">Exame: 2022 rules</a><a href="https://agorarn.com.br/ultimas/governo-lula-aumenta-limite-de-caches-de-artistas-na-rouanet-de-r-3-mil-para-r-25-mil/" target="_blank" rel="noopener">Agora RN: 2023 rules</a></span>
+</section>
+
+<section aria-labelledby="h-pref">
+  <h2 id="h-pref">Rouanet is not a city hall concert</h2>
+  <p class="sub lg">In 2022, singer Zé Neto criticized artists who use Rouanet. Then million-real fees for sertanejo (Brazilian country music) concerts came to light, and prosecutors began investigating. The case became known as the “Sertanejo CPI”. But the money was different:</p>
+  <div class="vs">
+    <div class="card" style="--c:var(--accent)"><span class="emo" aria-hidden="true">🎭</span><h3>Rouanet Law</h3><ul><li>Sponsorship from companies and individuals with a tax incentive, under the legal conditions.</li><li>Individual fee: R$25,000 per performance, with exceptions.</li><li>Project reviewed by the Ministry of Culture.</li></ul></div>
+    <div class="card" style="--c:var(--usd)"><span class="emo" aria-hidden="true">🏛️</span><h3>City hall concert</h3><ul><li>Money from the city's own budget.</li><li>Has no Rouanet fee cap.</li><li>Hiring without bidding must meet the legal requirements; today, art. 74, II, of Law 14.133/2021.</li></ul></div>
+  </div>
+  <p class="sub lg">Comparing the Rouanet cap with fees paid by city halls in 2022:</p>
+  <div class="card tl" id="shows"></div>
+  <p class="lg">Prosecutors opened investigations in <b>at least 36 cities</b>. In Teolândia, Bahia, the fee for a single concert was more than 40% of what the city had spent on health the previous year. The problem continues: in 2025, city halls in Minas Gerais spent about R$538 million on concerts, and the state audit court stepped up oversight.</p>
+  <span class="src"><a href="https://diariodonordeste.verdesmares.com.br/entretenimento/e-hit/shows-de-sertanejo-sao-investigados-em-mais-de-35-cidades-pelo-mp-gusttavo-lima-lidera-lista-1.3242859" target="_blank" rel="noopener">UOL, via Diário do Nordeste: Sertanejo CPI</a><a href="https://ofator.com.br/informacao/tce-de-minas-prepara-norma-e-aperta-fiscalizacao-sobre-caches-de-shows-pagos-por-prefeituras/" target="_blank" rel="noopener">O Fator: Minas city halls in 2025</a></span>
+</section>
+
+<section aria-labelledby="h-quanto">
+  <h2 id="h-quanto">How much Rouanet moves</h2>
+  <p class="sub lg">How much projects raised through the tax incentive each year:</p>
+  <div class="card tl" id="capt"></div>
+  <div class="three">
+    <div class="card"><span class="n">R$ 7.59</span><h3>of activity for every R$1 of incentive</h3><p>in economic impact estimated by FGV, in a study commissioned by the Ministry of Culture. It is not a net return to the Treasury.</p></div>
+    <div class="card"><span class="n">228,000</span><h3>jobs</h3><p>kept or created by 2024 projects, the same study says.</p></div>
+    <div class="card" style="--c:var(--usd)"><span class="n" style="color:var(--usd)">86 of 100</span><h3>projects in the South and Southeast</h3><p>In 2024 the money was still concentrated. In 2025, the Ministry of Culture recorded projects carried out in all 27 states.</p></div>
+  </div>
+  <p class="lg">There has also been fraud. In 2016, Operation Boca Livre investigated suspected diversion of about <b>R$21 million</b> from Rouanet, and even a wedding was paid for with the money.</p>
+  <span class="src"><a href="https://istoedinheiro.com.br/lei-rouanet-recorde-2025-projetos-captaram" target="_blank" rel="noopener">IstoÉ Dinheiro: 2022, 2024 and 2025</a><a href="https://diariodonordeste.verdesmares.com.br/projeto-comprova/ha-diferenca-entre-os-valores-que-sao-aprovados-e-os-que-sao-captados-por-projetos-via-lei-rouanet-1.3557248" target="_blank" rel="noopener">Comprova: 2023</a><a href="https://www.brasildefato.com.br/2026/01/13/lei-rouanet-gera-empregos-e-impacto-bilionario-mas-sul-e-sudeste-ainda-concentram-86-dos-projetos/" target="_blank" rel="noopener">FGV, via Brasil de Fato</a><a href="https://exame.com/brasil/mpf-denuncia-31-pessoas-acusadas-de-fraudes-usando-a-lei-rouanet/" target="_blank" rel="noopener">Exame: Operation Boca Livre</a></span>
+</section>
+
+<section aria-labelledby="h-vf">
+  <h2 id="h-vf">Is it true?</h2>
+  <div class="vf">
+    <div class="vfi"><span class="badge m">Needs proof</span><p><b>“Famous artists make millions from Rouanet.”</b> There is a cap per performance, with exceptions. The total a project raises is not personal income. Only payment records can verify a specific case.</p></div>
+    <div class="vfi"><span class="badge v">True</span><p><b>“Bolsonaro lowered the Rouanet fee to R$3,000.”</b> That was in February 2022. Before, it was R$45,000.</p></div>
+    <div class="vfi"><span class="badge v">True</span><p><b>“Lula raised the Rouanet fee.”</b> It went up to R$25,000 in April 2023. It is still less than before 2022.</p></div>
+    <div class="vfi"><span class="badge f">False</span><p><b>“The million-real sertanejo concerts were paid for by Rouanet.”</b> They were paid for by city halls, with the city's own money.</p></div>
+    <div class="vfi"><span class="badge f">False</span><p><b>“Lula spent R$16 billion on Rouanet in 2023.”</b> That is the amount approved. Companies sponsored R$2.3 billion.</p></div>
+    <div class="vfi"><span class="badge m">Half true</span><p><b>“Rouanet is public money.”</b> The tax incentive is tax the government does not collect from sponsors. It is indirect public support; it is not the same as a direct budget transfer.</p></div>
+    <div class="vfi"><span class="badge m">Half true</span><p><b>“Rouanet only helps the Southeast.”</b> In 2024, 86 out of every 100 projects were in the South and Southeast. But today there are projects in every state.</p></div>
+    <div class="vfi"><span class="badge f">False</span><p><b>“There was never any theft in Rouanet.”</b> Operation Boca Livre, in 2016, investigated suspected diversion of about R$21 million; accusation and conviction are distinct stages.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-resumo">
+  <div class="verdict">
+    <h2 id="h-resumo">In short</h2>
+    <ul>
+      <li>The Rouanet incentive lets companies and individuals sponsor culture with <b>part of their taxes</b>.</li>
+      <li>The individual fee has a cap <b>per performance</b>, currently R$25,000, with exceptions. It is not a cap on total earnings.</li>
+      <li>The <b>R$1 million</b> fees came from <b>city halls</b>, not from Rouanet.</li>
+      <li>The law moves the economy, but the money is still concentrated in the South and Southeast.</li>
+    </ul>
+  </div>
+</section>
+
+<details class="mais">
+  <summary>Want to see all the numbers? Tap here</summary>
+  <div class="mais-body">
+    <h3>Fee caps per performance</h3>
+    <table>
+      <tr><th>Who</th><th>Before 2022</th><th>2022 (Bolsonaro)</th><th>2023 (Lula)</th></tr>
+      <tr><td>Solo artist</td><td>R$45,000</td><td>R$3,000</td><td>R$25,000</td></tr>
+      <tr><td>Musician</td><td>–</td><td>R$3,500</td><td>R$5,000</td></tr>
+      <tr><td>Conductor</td><td>–</td><td>R$15,000</td><td>R$25,000</td></tr>
+      <tr><td>Group or band</td><td>–</td><td>–</td><td>R$50,000</td></tr>
+    </table>
+    <span class="src"><a href="https://exame.com/brasil/governo-bolsonaro-oficializa-serie-de-mudancas-na-lei-rouanet-entenda" target="_blank" rel="noopener">Exame</a><a href="https://agorarn.com.br/ultimas/governo-lula-aumenta-limite-de-caches-de-artistas-na-rouanet-de-r-3-mil-para-r-25-mil/" target="_blank" rel="noopener">Agora RN</a></span>
+    <h3>Other changes</h3>
+    <p>In 2022, the cap for a regular project fell from R$1 million to R$500,000, theater rental was limited to R$10,000 and the deadline to seek sponsorship fell from 36 to 24 months. Culture secretary Mario Frias said the idea was to make the law “fairer and more popular”. In 2023, the cap began to range from R$1 million to R$10 million, four-year plans returned and the culture commission (CNIC) resumed work.</p>
+    <span class="src"><a href="https://exame.com/brasil/governo-bolsonaro-oficializa-serie-de-mudancas-na-lei-rouanet-entenda" target="_blank" rel="noopener">Exame</a><a href="https://agorarn.com.br/ultimas/governo-lula-aumenta-limite-de-caches-de-artistas-na-rouanet-de-r-3-mil-para-r-25-mil/" target="_blank" rel="noopener">Agora RN</a></span>
+    <h3>Fees investigated in 2022</h3>
+    <table>
+      <tr><th>City</th><th>Fee</th></tr>
+      <tr><td>Conceição do Mato Dentro (Minas Gerais)</td><td>R$1.2 M</td></tr>
+      <tr><td>Magé (Rio de Janeiro)</td><td>R$1 M</td></tr>
+      <tr><td>São Luiz (Roraima), about R$97 per resident</td><td>R$800,000</td></tr>
+      <tr><td>Teolândia (Bahia), a festival costing more than R$2 M</td><td>R$704,000</td></tr>
+    </table>
+    <p>Gusttavo Lima, the most cited, said: “I have never benefited from public money or loans.” A 1993 law allows hiring artists acclaimed by critics or the public without a bidding process.</p>
+    <span class="src"><a href="https://diariodonordeste.verdesmares.com.br/entretenimento/e-hit/shows-de-sertanejo-sao-investigados-em-mais-de-35-cidades-pelo-mp-gusttavo-lima-lidera-lista-1.3242859" target="_blank" rel="noopener">Diário do Nordeste</a></span>
+    <h3>FGV study (2026)</h3>
+    <p>In 2024 the projects moved R$25.7 billion in the economy. The government gave up a little over R$3 billion in taxes and collected R$3.9 billion in taxes from the culture sector. 85.5% of payments went to micro and small businesses. The study was commissioned by the Ministry of Culture.</p>
+    <span class="src"><a href="https://www.brasildefato.com.br/2026/01/13/lei-rouanet-gera-empregos-e-impacto-bilionario-mas-sul-e-sudeste-ainda-concentram-86-dos-projetos/" target="_blank" rel="noopener">Brasil de Fato</a></span>
+  </div>
+</details>
+
+<footer>
+  <p>Each item links to the fact-check, government body or report it came from. Sources are in Portuguese.</p>
+  <p>Updated on October 10, 2026.</p>
+</footer>
+
+<section id="fontes-revisao" aria-labelledby="h-fontes-revisao" style="margin-block:32px;padding:20px;border:1px solid var(--line);border-radius:6px">
+<h2 id="h-fontes-revisao">Sources and limits of this reading</h2>
+<p>Historical fee values come from dated news reports. For current rules, the normative instruction and its exceptions apply. The FGV study estimates economic activity and jobs created or kept; it does not prove a causal net fiscal return.</p>
+<div class="src"><a href="https://www.gov.br/cultura/pt-br/acesso-a-informacao/legislacao-e-normativas/instrucao-normativa-minc-no-29-de-29-de-janeiro-de-2026" target="_blank" rel="noopener">Ministry of Culture: IN 29/2026, art. 26</a><a href="https://portal.fgv.br/noticias/lei-rouanet-movimenta-r-257-bilhoes-e-sustenta-228-mil-empregos-aponta-estudo-da-fgv" target="_blank" rel="noopener">FGV: impact study</a></div>
+<p style="font-size:14px"><a href="https://fcarvalhodev.github.io/rotas/en/metodologia.html">How we tell facts, allegations and interpretations apart</a> · Editorial review: October 10, 2026.</p>
+</section>
+</main>
+
+<script>
+(function(){
+const bars=(id,rows,max)=>{document.getElementById(id).innerHTML=rows.map(r=>{if(r[0]==='era')return `<div class="era">${r[1]}</div>`;const w=Math.max(r[2]/max*100,.6);return `<div class="tr"><div class="lab">${r[0]}<span>${r[1]}</span></div><div class="t">${w<26?`<span class="f" style="--c:${r[3]};width:${w}%"></span><span class="v" style="left:calc(${w}% + 8px)">${r[4]}</span>`:`<span class="f" style="--c:${r[3]};width:${w}%">${r[4]}</span>`}</div></div>`}).join('');};
+bars('cache',[
+ ["Before 2022","old rule",45,"var(--muted)","R$45,000"],
+ ["February 2022","Bolsonaro government",3,"var(--g-bolso)","R$3,000"],
+ ["April 2023","Lula government",25,"var(--g-pt)","R$25,000"]
+],45);
+bars('shows',[
+ ["Rouanet cap today","solo artist",25,"var(--accent)","R$25,000"],
+ ["Conceição do Mato Dentro (Minas Gerais)","Gusttavo Lima",1200,"var(--usd)","R$1.2 million"],
+ ["Magé (Rio de Janeiro)","Gusttavo Lima",1000,"var(--usd)","R$1 million"],
+ ["São Luiz (Roraima)","Gusttavo Lima",800,"var(--usd)","R$800,000"],
+ ["Teolândia (Bahia)","Gusttavo Lima",704,"var(--usd)","R$704,000"]
+],1200);
+bars('capt',[
+ ["2022","Bolsonaro government",2.1,"var(--g-bolso)","R$2.1 bn"],
+ ["2023","Lula government",2.3,"var(--g-pt)","R$2.3 bn"],
+ ["2024","Lula government",3.0,"var(--g-pt)","R$3 bn"],
+ ["2025","Lula government",3.41,"var(--g-pt)","R$3.4 bn"]
+],3.41);
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rouanet Route in icons</title>
+<meta name="description" content="The Rouanet Law in icons: the fee cap under each government, Rouanet vs. concerts paid for by city halls and how much the law moves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fcarvalhodev.github.io/rotas/visual/visual.css">
+<style>
+:root{--accent:#a3283c;--hero:#851f31}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#f08f9c;--hero:#851f31}}
+:root[data-theme="dark"]{--accent:#f08f9c;--hero:#851f31}
+.hero{background:var(--hero);border-color:var(--hero)}.hero .go a{color:var(--hero)}
+</style>
+</head><body>
+<style>/* barra comum das Rotas */.rotas-bar .rb-lang{margin-left:auto;color:var(--accent);font-weight:600}.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato fácil */body{font-size:19px;line-height:1.7}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(46px,11vw,104px);line-height:.9;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Routes"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/en/">Routes</a><a href="https://fcarvalhodev.github.io/rota-washington/en/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/en/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/en/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/en/">Faith</a><a href="https://fcarvalhodev.github.io/rota-esplanada/en/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/en/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/en/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/en/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/en/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/en/">Treasury</a><a href="https://fcarvalhodev.github.io/rota-rouanet/en/" aria-current="page">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/en/">Winds</a><a href="https://fcarvalhodev.github.io/rota-do-algoritmo/en/">Algorithm</a><a class="rb-lang" href="../visual.html" hreflang="pt-BR" lang="pt-BR">PT</a></div></nav>
+
+
+<main class="rv" id="rv" aria-label="Rouanet Route in icons"></main>
+<script>
+window.RV_DATA={lang:"en",
+ kicker:"Rouanet Route · in icons",
+ title:"Do artists get rich from the Rouanet Law?",
+ answer:"The individual fee has a cap: <b>R$25,000 per performance</b>, with exceptions. The <b>R$1 million</b> fees came from city halls, not from Rouanet.",
+ heroIcons:["iso-microfone","iso-ingresso","iso-moeda","iso-doc","iso-microfone","iso-ingresso","iso-moeda","iso-governo","iso-microfone","iso-ingresso"],
+ full:"index.html",
+ updated:"Data through January 2026 · updated October 12, 2026 · original icons and Tabler Icons (MIT)",
+ cards:[
+  {type:"hero",span:"s4",rows:2},
+  {type:"iso",span:"s8",label:"Solo artist fee, per performance",title:"One government cut it, the other raised it, but it did not return to the old level",size:22,
+   rows:[
+    {name:"Before 2022",icon:"iso-microfone",n:45,value:"R$45,000",color:"var(--d)"},
+    {name:"Feb 2022 · Bolsonaro government",icon:"iso-microfone",n:3,value:"R$3,000",color:"var(--accent)"},
+    {name:"Apr 2023 · Lula government",icon:"iso-microfone",n:25,value:"R$25,000",color:"var(--accent)"}],
+   key:{icon:"iso-microfone",text:"R$1,000",color:"var(--accent)"},
+   text:"The cap is per performance, not per year. The current rule allows exceptions.",
+   src:[["Exame: 2022 rules","https://exame.com/brasil/governo-bolsonaro-oficializa-serie-de-mudancas-na-lei-rouanet-entenda"],["Agora RN: 2023 rules","https://agorarn.com.br/ultimas/governo-lula-aumenta-limite-de-caches-de-artistas-na-rouanet-de-r-3-mil-para-r-25-mil/"],["Ministry of Culture: IN 29/2026, art. 26","https://www.gov.br/cultura/pt-br/acesso-a-informacao/legislacao-e-normativas/instrucao-normativa-minc-no-29-de-29-de-janeiro-de-2026"]]},
+  {type:"iso",span:"s8",label:"Other caps per performance",title:"Musicians, conductors and bands also have a ceiling",size:22,
+   rows:[
+    {head:"Musician"},
+    {name:"2022 · Bolsonaro",icon:"iso-microfone",n:3.5,value:"R$3,500",color:"var(--accent)"},
+    {name:"2023 · Lula",icon:"iso-microfone",n:5,value:"R$5,000",color:"var(--accent)"},
+    {head:"Conductor"},
+    {name:"2022 · Bolsonaro",icon:"iso-microfone",n:15,value:"R$15,000",color:"var(--accent)"},
+    {name:"2023 · Lula",icon:"iso-microfone",n:25,value:"R$25,000",color:"var(--accent)"},
+    {head:"Group or band"},
+    {name:"2023 · Lula",icon:"iso-microfone",n:50,value:"R$50,000",color:"var(--accent)"}],
+   key:{icon:"iso-microfone",text:"R$1,000",color:"var(--accent)"},
+   src:[["Exame","https://exame.com/brasil/governo-bolsonaro-oficializa-serie-de-mudancas-na-lei-rouanet-entenda"],["Agora RN","https://agorarn.com.br/ultimas/governo-lula-aumenta-limite-de-caches-de-artistas-na-rouanet-de-r-3-mil-para-r-25-mil/"]]},
+  {type:"scale",span:"s6",label:"Rouanet is not a city hall concert",title:"The money for the million-real concerts was different",tilt:7,
+   left:{icon:"iso-ingresso",title:"Rouanet Law",text:"Sponsorship from companies and individuals, with an income tax deduction. Individual fee: R$25,000 per performance, with exceptions."},
+   right:{icon:"iso-governo",title:"City hall concert",text:"Money from the city's own budget. It has no Rouanet fee cap."},
+   src:[["UOL, via Diário do Nordeste: Sertanejo CPI","https://diariodonordeste.verdesmares.com.br/entretenimento/e-hit/shows-de-sertanejo-sao-investigados-em-mais-de-35-cidades-pelo-mp-gusttavo-lima-lidera-lista-1.3242859"],["Ministry of Culture: IN 29/2026","https://www.gov.br/cultura/pt-br/acesso-a-informacao/legislacao-e-normativas/instrucao-normativa-minc-no-29-de-29-de-janeiro-de-2026"]]},
+  {type:"iso",span:"s6",label:"Fees paid by city halls in 2022",title:"One city hall concert paid 48 times the current Rouanet cap",size:20,
+   rows:[
+    {name:"Rouanet cap today, solo artist",icon:"iso-ingresso",n:1,value:"R$25,000",color:"var(--accent)"},
+    {name:"Conceição do Mato Dentro (Minas Gerais)",icon:"iso-ingresso",n:48,value:"R$1.2 M",color:"var(--b)"},
+    {name:"Magé (Rio de Janeiro)",icon:"iso-ingresso",n:40,value:"R$1 M",color:"var(--b)"},
+    {name:"São Luiz (Roraima)",icon:"iso-ingresso",n:32,value:"R$800,000",color:"var(--b)"},
+    {name:"Teolândia (Bahia)",icon:"iso-ingresso",n:28.16,value:"R$704,000",color:"var(--b)"}],
+   key:{icon:"iso-ingresso",text:"R$25,000, the Rouanet cap",color:"var(--b)"},
+   text:"Prosecutors investigated concerts in at least 36 cities.",
+   src:[["UOL, via Diário do Nordeste","https://diariodonordeste.verdesmares.com.br/entretenimento/e-hit/shows-de-sertanejo-sao-investigados-em-mais-de-35-cidades-pelo-mp-gusttavo-lima-lidera-lista-1.3242859"]]},
+  {type:"iso",span:"s6",label:"One coin = R$500 million, throughout this page",title:"How much projects raised per year",size:26,
+   rows:[
+    {name:"2022 · Bolsonaro government",icon:"iso-moeda",n:4.2,value:"R$2.1 bn",color:"var(--accent)"},
+    {name:"2023 · Lula government",icon:"iso-moeda",n:4.6,value:"R$2.3 bn",color:"var(--accent)"},
+    {name:"2024 · Lula government",icon:"iso-moeda",n:6,value:"R$3 bn",color:"var(--accent)"},
+    {name:"2025 · Lula government",icon:"iso-moeda",n:6.82,value:"R$3.4 bn",color:"var(--accent)"}],
+   key:{icon:"iso-moeda",text:"R$500 million",color:"var(--accent)"},
+   src:[["IstoÉ Dinheiro: 2022, 2024 and 2025","https://istoedinheiro.com.br/lei-rouanet-recorde-2025-projetos-captaram"],["Comprova: 2023","https://diariodonordeste.verdesmares.com.br/projeto-comprova/ha-diferenca-entre-os-valores-que-sao-aprovados-e-os-que-sao-captados-por-projetos-via-lei-rouanet-1.3557248"]]},
+  {type:"iso",span:"s6",label:"2023 projects",title:"“Approved” is not “spent”",size:22,
+   rows:[
+    {name:"Approved, about",icon:"iso-moeda",n:32,value:"R$16 bn",color:"var(--d)"},
+    {name:"Actually raised",icon:"iso-moeda",n:4.6,ghost:27.4,value:"R$2.3 bn",color:"var(--accent)"}],
+   key:{icon:"iso-moeda",text:"R$500 million",color:"var(--accent)"},
+   text:"Approval is only permission to look for sponsorship. There is no money yet.",
+   src:[["Comprova, via Diário do Nordeste","https://diariodonordeste.verdesmares.com.br/projeto-comprova/ha-diferenca-entre-os-valores-que-sao-aprovados-e-os-que-sao-captados-por-projetos-via-lei-rouanet-1.3557248"],["IstoÉ Dinheiro: how it works","https://istoedinheiro.com.br/lei-rouanet-recorde-2025-projetos-captaram"]]},
+  {type:"iso",span:"s12",label:"FGV study, 2024 projects",title:"The projects moved R$25.7 billion in the economy",size:24,
+   rows:[
+    {name:"Moved in the economy",icon:"iso-moeda",n:51.4,value:"R$25.7 bn",color:"var(--c)"},
+    {name:"Taxes collected in the culture sector",icon:"iso-moeda",n:7.8,value:"R$3.9 bn",color:"var(--c)"},
+    {name:"Tax the government did not collect",icon:"iso-moeda",n:6,value:"a little over R$3 bn",color:"var(--accent)"}],
+   key:{icon:"iso-moeda",text:"R$500 million, as above",color:"var(--c)"},
+   text:"FGV estimates R$7.59 of activity for every R$1 of incentive. Study commissioned by the Ministry of Culture; not a net return to the Treasury.",
+   src:[["FGV, via Brasil de Fato","https://www.brasildefato.com.br/2026/01/13/lei-rouanet-gera-empregos-e-impacto-bilionario-mas-sul-e-sudeste-ainda-concentram-86-dos-projetos/"],["FGV: impact study","https://portal.fgv.br/noticias/lei-rouanet-movimenta-r-257-bilhoes-e-sustenta-228-mil-empregos-aponta-estudo-da-fgv"]]},
+  {type:"iso",span:"s6",label:"Jobs, 2024 projects",title:"228,000 jobs kept or created",size:26,
+   rows:[{name:"",icon:"iso-trabalhador",n:22.8,value:"228,000",color:"var(--accent)"}],
+   key:{icon:"iso-trabalhador",text:"10,000 jobs",color:"var(--accent)"},
+   text:"Estimate from the same FGV study.",
+   src:[["FGV, via Brasil de Fato","https://www.brasildefato.com.br/2026/01/13/lei-rouanet-gera-empregos-e-impacto-bilionario-mas-sul-e-sudeste-ainda-concentram-86-dos-projetos/"],["FGV: impact study","https://portal.fgv.br/noticias/lei-rouanet-movimenta-r-257-bilhoes-e-sustenta-228-mil-empregos-aponta-estudo-da-fgv"]]},
+  {type:"iso",span:"s6",label:"Where the projects are, 2024",title:"86 out of every 100 in the South and Southeast",size:22,
+   rows:[{name:"",icon:"iso-ingresso",n:43,ghost:7,value:"86 of 100",color:"var(--accent)"}],
+   key:[{icon:"iso-ingresso",text:"2 projects in the South and Southeast",color:"var(--accent)"},{icon:"iso-ingresso",text:"2 projects in the rest of the country"}],
+   text:"In 2025, the Ministry of Culture recorded projects carried out in all 27 states.",
+   src:[["FGV, via Brasil de Fato","https://www.brasildefato.com.br/2026/01/13/lei-rouanet-gera-empregos-e-impacto-bilionario-mas-sul-e-sudeste-ainda-concentram-86-dos-projetos/"],["IstoÉ Dinheiro","https://istoedinheiro.com.br/lei-rouanet-recorde-2025-projetos-captaram"]]},
+  {type:"verdicts",span:"s12",label:"Is it true?",
+   items:[["m","“Famous artists make millions from Rouanet.”","Needs proof"],["v","“Bolsonaro lowered the Rouanet fee to R$3,000.”"],["v","“Lula raised the Rouanet fee.”"],["f","“The million-real sertanejo concerts were paid for by Rouanet.”"],["f","“Lula spent R$16 billion on Rouanet in 2023.”"],["m","“Rouanet is public money.”"],["m","“Rouanet only helps the Southeast.”"],["f","“There was never any theft in Rouanet.”"]]}
+ ]};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://fcarvalhodev.github.io/rotas/visual/icons.js"></script>
+<script src="https://fcarvalhodev.github.io/rotas/visual/visual.js"></script>
+</body></html>
